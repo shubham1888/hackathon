@@ -5,16 +5,14 @@ import Image from "next/image";
 
 export default function Home() {
   return (
-    <div className="flex gap-2">
-      <div>
-        <Colleges />
-      </div>
-      <div>
-        <Main />
-      </div>
-      <div>
-        <Category />
-      </div>
+    <div>
+      {/* <div> */}
+        {/* <Colleges /> */}
+      {/* </div> */}
+      {/* <div> */}
+        {/* <Main /> */}
+      {/* </div> */}
+      <Main />
     </div>
   );
 }
