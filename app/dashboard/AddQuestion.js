@@ -1,7 +1,7 @@
 "use client"
 import { Button } from '@/components/ui/button'
 import React, { useRef } from 'react'
-import { db,storage } from "@/firebase";
+import { db, storage } from "@/firebase";
 import { collection, setDoc, doc } from "firebase/firestore"
 import { uploadBytes, ref } from "firebase/storage"
 
@@ -17,10 +17,15 @@ const AddQuestion = () => {
   };
   const saveQuestion = async (formData) => {
     const id = Date.now().toString(36)
-    saveimage()
+    if (!(imageref.current.files[0] === undefined)) {
+      saveimage()
+    }
     const res = await setDoc(doc(questionref, id), {
       question: formData.get("question"),
       explanation: formData.get("Explanation"),
+      like: 0,
+      upvote: 0,
+      downvote: 0,
       id,
     })
   }

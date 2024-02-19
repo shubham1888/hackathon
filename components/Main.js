@@ -1,5 +1,7 @@
 import React from 'react'
 import Questions from './Questions'
+import {db} from "@/firebase"
+import { getDocs,collection } from 'firebase/firestore'
 
 const Main = () => {
   return (
